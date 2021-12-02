@@ -7,18 +7,138 @@ body {
     font-family: 'CBlack';
     font-size: 50px;
     font-weight: bold;
-    letter-spacing: -2px;
-    line-height: 50px;
-}
-a {
-    text-decoration: none;
-}
-.heading {
-    letter-spacing: -6px;
     text-align: center;
+    letter-spacing: -1.5px;
+    line-height: 50px;
+    background: #C6FFDD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.button {
+
+button {
+    text-decoration: none;
+    padding: 10px 35px;
+    color: black;
+    border-radius: 100px;
+    text-align: center;
+    border: 5px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    transition: all 1s ease; 
+    font-family: 'CBlack';
     font-size: 30px;
     text-align: center;
+    letter-spacing: -1.5px;
+}
 
+button p {
+    margin: 0;
+}
+
+span {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 0.7em;
+  left: 50%;
+  width: 20em;
+  height: 20em;
+  margin-left: -10em;
+  border-radius: 42.5%;
+  transform-origin: 50% 50%;
+  transition: all 1s ease, top 1.5s ease;
+}
+
+.Coralwave1 {
+  background: #ffb733;
+  animation: smallwave 3s infinite linear;
+}
+
+.Coralwave2 {
+  background: #f97890;
+  animation: smallwave 4s infinite linear;
+}
+
+.Coralwave3 {
+  background: #5eb1d4;
+  animation: smallwave 5s infinite linear;
+}
+
+button:hover {
+  transition: all 1s ease;
+}
+
+button:hover span {
+  top: 0.2em;
+  transition: all 1s ease, top 1.5s ease;
+}
+
+@-moz-keyframes smallwave {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes smallwave {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@-o-keyframes smallwave {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes smallwave {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+.heading {
+    letter-spacing: -6px;
+}
+
+.card {
+    margin-top: 15%;
 }
