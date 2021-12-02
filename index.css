@@ -142,3 +142,10 @@ button:hover span {
 .card {
     margin-top: 15%;
 }
+
+i.fab.fa-spotify {
+    margin-left: 10px;
+    font-size: 38px;
+    display: flex;
+    float: right;
+}
