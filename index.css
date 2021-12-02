@@ -3,6 +3,10 @@
     src: url("CBlack.otf") format("opentype");
 }
 
+::selection {
+    background-color: #C6FFDD;
+}
+
 body {
     font-family: 'CBlack';
     font-size: 50px;
@@ -17,7 +21,7 @@ body {
 
 button {
     text-decoration: none;
-    padding: 10px 35px;
+    padding: 10px 30px;
     color: black;
     border-radius: 100px;
     text-align: center;
