@@ -3,12 +3,22 @@
     src: url("CBlack.otf") format("opentype");
 }
 
-body{
+body {
     font-family: 'CBlack';
     font-size: 50px;
-    font-style: normal;
     font-weight: bold;
     letter-spacing: -2px;
     line-height: 50px;
-    text-transform: none;
+}
+a {
+    text-decoration: none;
+}
+.heading {
+    letter-spacing: -6px;
+    text-align: center;
+}
+.button {
+    font-size: 30px;
+    text-align: center;
+
 }
