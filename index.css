@@ -1,6 +1,6 @@
 body{
     font-family: CBlack;
-    src: url("C:\Users\PC\Circular\CBlack.otf") format("opentype");
+    src: url("\CBlack.otf") format("opentype");
     font-size: 50px;
     font-style: normal;
     font-weight: bold;
