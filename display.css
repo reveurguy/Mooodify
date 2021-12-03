@@ -20,22 +20,6 @@
     src: url("CBold.otf") format("opentype");
 }
 
-::-webkit-scrollbar {
-    width: .8rem;
-    height: 1rem;
-}
-
-::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: -webkit-linear-gradient( #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient( #f7797d, #FBD786, #C6FFDD);
-    border-radius: 5px;   
-}
-
 ::selection {
     background-color: #C6FFDD;
     color: black;
