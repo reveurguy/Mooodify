@@ -321,7 +321,7 @@ function calculateCategory() {
 
   for (c = 0; c < length; c++) {
     if (trackMood[c] < 0.3 && trackEnergy[c] < 0.6) {
-      addToSad(c);
+      // addToSad(c);
       saduri += String(trackURIs[c]);
       saduri += ",";
     }
@@ -331,17 +331,17 @@ function calculateCategory() {
       happyuri += ",";
     }
     if (trackEnergy[c] > 0.8) {
-      addToAggressive(c);
+      // addToAggressive(c);
       aggressiveuri += String(trackURIs[c]);
       aggressiveuri += ",";
     }
     if (trackMood[c] > 0.3 && trackDance[c] > 0.75) {
-      addToParty(c);
+      // addToParty(c);
       partyuri += String(trackURIs[c]);
       partyuri += ",";
     }
     if (trackEnergy[c] < 0.4 && trackMood[c] > 0.3) {
-      addToChill(c);
+      // addToChill(c);
       chilluri += String(trackURIs[c]);
       chilluri += ",";
     }
