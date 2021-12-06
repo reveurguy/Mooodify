@@ -388,87 +388,87 @@ function emptyCustomList() {
   }
 }
 
-function showEmptyMessage() {
-  var referenceNode = document.querySelector("#track-list-custom");
-  var newNode = document.createElement("div");
-  newNode.className = "empty-state";
+// function showEmptyMessage() {
+//   var referenceNode = document.querySelector("#track-list-custom");
+//   var newNode = document.createElement("div");
+//   newNode.className = "empty-state";
 
-  newNode.innerHTML = "No songs found for this mood. Try another.";
+//   newNode.innerHTML = "No songs found for this mood. Try another.";
 
-  referenceNode.appendChild(newNode);
-}
+//   referenceNode.appendChild(newNode);
+// }
 
-function addToCustom(i) {
-  var referenceNode = document.querySelector("#track-list-custom");
+// function addToCustom(i) {
+//   var referenceNode = document.querySelector("#track-list-custom");
 
-  var imgNode = document.createElement("div");
-  imgNode.className = "album-art";
+//   var imgNode = document.createElement("div");
+//   imgNode.className = "album-art";
 
-  var album_img = document.createElement("img");
-  album_img.src = albumArts[i];
+//   var album_img = document.createElement("img");
+//   album_img.src = albumArts[i];
 
-  imgNode.appendChild(album_img);
+//   imgNode.appendChild(album_img);
 
-  var trackNode = document.createElement("div");
-  trackNode.className = "track";
+//   var trackNode = document.createElement("div");
+//   trackNode.className = "track";
 
-  var newNode = document.createElement("div");
-  newNode.className = "track-description";
+//   var newNode = document.createElement("div");
+//   newNode.className = "track-description";
 
-  var trackname = document.createElement("div");
-  trackname.innerHTML = trackNames[i];
-  trackname.className = "track-name";
+//   var trackname = document.createElement("div");
+//   trackname.innerHTML = trackNames[i];
+//   trackname.className = "track-name";
 
-  var artistname = document.createElement("div");
-  artistname.innerHTML = artistNames[i];
-  artistname.className = "artist-name";
+//   var artistname = document.createElement("div");
+//   artistname.innerHTML = artistNames[i];
+//   artistname.className = "artist-name";
 
-  newNode.appendChild(trackname);
-  newNode.appendChild(artistname);
+//   newNode.appendChild(trackname);
+//   newNode.appendChild(artistname);
 
-  trackNode.appendChild(imgNode);
-  trackNode.appendChild(newNode);
+//   trackNode.appendChild(imgNode);
+//   trackNode.appendChild(newNode);
 
-  referenceNode.appendChild(trackNode);
+//   referenceNode.appendChild(trackNode);
 
-  showCustomButton();
-}
+//   showCustomButton();
+// }
 
-function addToSad(c) {
-  var referenceNode = document.querySelector("#track-list-sad");
+// function addToSad(c) {
+//   var referenceNode = document.querySelector("#track-list-sad");
 
-  var imgNode = document.createElement("div");
-  imgNode.className = "album-art";
+//   var imgNode = document.createElement("div");
+//   imgNode.className = "album-art";
 
-  var album_img = document.createElement("img");
-  album_img.src = albumArts[c];
+//   var album_img = document.createElement("img");
+//   album_img.src = albumArts[c];
 
-  imgNode.appendChild(album_img);
+//   imgNode.appendChild(album_img);
 
-  var trackNode = document.createElement("div");
-  trackNode.className = "track";
+//   var trackNode = document.createElement("div");
+//   trackNode.className = "track";
 
-  var newNode = document.createElement("div");
-  newNode.className = "track-description";
+//   var newNode = document.createElement("div");
+//   newNode.className = "track-description";
 
-  var trackname = document.createElement("div");
-  trackname.innerHTML = trackNames[c];
-  trackname.className = "track-name";
+//   var trackname = document.createElement("div");
+//   trackname.innerHTML = trackNames[c];
+//   trackname.className = "track-name";
 
-  var artistname = document.createElement("div");
-  artistname.innerHTML = artistNames[c];
-  artistname.className = "artist-name";
+//   var artistname = document.createElement("div");
+//   artistname.innerHTML = artistNames[c];
+//   artistname.className = "artist-name";
 
-  newNode.appendChild(trackname);
-  newNode.appendChild(artistname);
+//   newNode.appendChild(trackname);
+//   newNode.appendChild(artistname);
 
-  trackNode.appendChild(imgNode);
-  trackNode.appendChild(newNode);
+//   trackNode.appendChild(imgNode);
+//   trackNode.appendChild(newNode);
 
-  referenceNode.appendChild(trackNode);
+//   referenceNode.appendChild(trackNode);
 
-  hideSadEmptyState();
-}
+//   hideSadEmptyState();
+// }
 
 function addToHappy(i) {
   var referenceNode = document.querySelector("#track-list-happy");
@@ -506,113 +506,113 @@ function addToHappy(i) {
   hideHappyEmptyState();
 }
 
-function addToParty(i) {
-  var referenceNode = document.querySelector("#track-list-party");
+// function addToParty(i) {
+//   var referenceNode = document.querySelector("#track-list-party");
 
-  var imgNode = document.createElement("div");
-  imgNode.className = "album-art";
+//   var imgNode = document.createElement("div");
+//   imgNode.className = "album-art";
 
-  var album_img = document.createElement("img");
-  album_img.src = albumArts[i];
+//   var album_img = document.createElement("img");
+//   album_img.src = albumArts[i];
 
-  imgNode.appendChild(album_img);
+//   imgNode.appendChild(album_img);
 
-  var trackNode = document.createElement("div");
-  trackNode.className = "track";
+//   var trackNode = document.createElement("div");
+//   trackNode.className = "track";
 
-  var newNode = document.createElement("div");
-  newNode.className = "track-description";
+//   var newNode = document.createElement("div");
+//   newNode.className = "track-description";
 
-  var trackname = document.createElement("div");
-  trackname.innerHTML = trackNames[i];
-  trackname.className = "track-name";
+//   var trackname = document.createElement("div");
+//   trackname.innerHTML = trackNames[i];
+//   trackname.className = "track-name";
 
-  var artistname = document.createElement("div");
-  artistname.innerHTML = artistNames[i];
-  artistname.className = "artist-name";
+//   var artistname = document.createElement("div");
+//   artistname.innerHTML = artistNames[i];
+//   artistname.className = "artist-name";
 
-  newNode.appendChild(trackname);
-  newNode.appendChild(artistname);
+//   newNode.appendChild(trackname);
+//   newNode.appendChild(artistname);
 
-  trackNode.appendChild(imgNode);
-  trackNode.appendChild(newNode);
+//   trackNode.appendChild(imgNode);
+//   trackNode.appendChild(newNode);
 
-  referenceNode.appendChild(trackNode);
+//   referenceNode.appendChild(trackNode);
 
-  hidePartyEmptyStates();
-}
+//   hidePartyEmptyStates();
+// }
 
-function addToChill(i) {
-  var referenceNode = document.querySelector("#track-list-chill");
+// function addToChill(i) {
+//   var referenceNode = document.querySelector("#track-list-chill");
 
-  var imgNode = document.createElement("div");
-  imgNode.className = "album-art";
+//   var imgNode = document.createElement("div");
+//   imgNode.className = "album-art";
 
-  var album_img = document.createElement("img");
-  album_img.src = albumArts[i];
+//   var album_img = document.createElement("img");
+//   album_img.src = albumArts[i];
 
-  imgNode.appendChild(album_img);
+//   imgNode.appendChild(album_img);
 
-  var trackNode = document.createElement("div");
-  trackNode.className = "track";
+//   var trackNode = document.createElement("div");
+//   trackNode.className = "track";
 
-  var newNode = document.createElement("div");
-  newNode.className = "track-description";
+//   var newNode = document.createElement("div");
+//   newNode.className = "track-description";
 
-  var trackname = document.createElement("div");
-  trackname.innerHTML = trackNames[i];
-  trackname.className = "track-name";
+//   var trackname = document.createElement("div");
+//   trackname.innerHTML = trackNames[i];
+//   trackname.className = "track-name";
 
-  var artistname = document.createElement("div");
-  artistname.innerHTML = artistNames[i];
-  artistname.className = "artist-name";
+//   var artistname = document.createElement("div");
+//   artistname.innerHTML = artistNames[i];
+//   artistname.className = "artist-name";
 
-  newNode.appendChild(trackname);
-  newNode.appendChild(artistname);
+//   newNode.appendChild(trackname);
+//   newNode.appendChild(artistname);
 
-  trackNode.appendChild(imgNode);
-  trackNode.appendChild(newNode);
+//   trackNode.appendChild(imgNode);
+//   trackNode.appendChild(newNode);
 
-  referenceNode.appendChild(trackNode);
+//   referenceNode.appendChild(trackNode);
 
-  hideChillEmptyStates();
-}
+//   hideChillEmptyStates();
+// }
 
-function addToAggressive(i) {
-  var referenceNode = document.querySelector("#track-list-aggressive");
+// function addToAggressive(i) {
+//   var referenceNode = document.querySelector("#track-list-aggressive");
 
-  var imgNode = document.createElement("div");
-  imgNode.className = "album-art";
+//   var imgNode = document.createElement("div");
+//   imgNode.className = "album-art";
 
-  var album_img = document.createElement("img");
-  album_img.src = albumArts[i];
+//   var album_img = document.createElement("img");
+//   album_img.src = albumArts[i];
 
-  imgNode.appendChild(album_img);
+//   imgNode.appendChild(album_img);
 
-  var trackNode = document.createElement("div");
-  trackNode.className = "track";
+//   var trackNode = document.createElement("div");
+//   trackNode.className = "track";
 
-  var newNode = document.createElement("div");
-  newNode.className = "track-description";
+//   var newNode = document.createElement("div");
+//   newNode.className = "track-description";
 
-  var trackname = document.createElement("div");
-  trackname.innerHTML = trackNames[i];
-  trackname.className = "track-name";
+//   var trackname = document.createElement("div");
+//   trackname.innerHTML = trackNames[i];
+//   trackname.className = "track-name";
 
-  var artistname = document.createElement("div");
-  artistname.innerHTML = artistNames[i];
-  artistname.className = "artist-name";
+//   var artistname = document.createElement("div");
+//   artistname.innerHTML = artistNames[i];
+//   artistname.className = "artist-name";
 
-  newNode.appendChild(trackname);
-  newNode.appendChild(artistname);
+//   newNode.appendChild(trackname);
+//   newNode.appendChild(artistname);
 
-  trackNode.appendChild(imgNode);
-  trackNode.appendChild(newNode);
+//   trackNode.appendChild(imgNode);
+//   trackNode.appendChild(newNode);
 
-  referenceNode.appendChild(trackNode);
+//   referenceNode.appendChild(trackNode);
 
-  hideAggressiveEmptyState();
-}
+//   hideAggressiveEmptyState();
+// }
 
 // ---------------------------------------------------------------------
 
