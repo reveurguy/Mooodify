@@ -24,23 +24,29 @@
     <div class="your-tracks">
         <h5 class="sub-heading">Your Favourite Tracks</h5>
             <hr class="sub-heading--1">
-
-            <button onclick="oneMonthRequest();">
-                <p>Last month</p>
-                <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
-            </button><button>
-                <p>6 months</p>
-                <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
-            </button><button>
-                <p>All Time</p>
-                <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
-            </button>
+            <div class="tab">
+                <button class="tab-btn" onclick="oneMonthRequest();">
+                    <p>Last month</p>
+                    <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
+                </button>
+                <button class="tab-btn" onclick="sixMonthsRequest()">
+                    <p>6 months</p>
+                    <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
+                </button>
+                <button class="tab-btn" onclick="allTimeRequest()">
+                    <p>All Time</p>
+                    <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
+                </button>
+            </div>
 
         <div class="card-group">
             <div class="flex-row">
-                <div class="card">
+                <div class="card" id= "happy">
                     <div class="card-cover">
                         <h5 class="card-head">upbeat</h5>
+                        <div class="track-list" id="track-list-happy">
+                            <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
+                        </div>
                         <button>
                             <p>Save as Playlist</p>
                             <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
@@ -50,6 +56,9 @@
                 <div class="card second">
                     <div class="card-cover">
                         <h5 class="card-head">upbeat</h5>
+                        <div class="track-list" id="track-list-happy">
+                            <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
+                        </div>
                         <button>
                             <p>Save as Playlist</p>
                             <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
@@ -61,6 +70,9 @@
                 <div class="card">
                     <div class="card-cover">
                         <h5 class="card-head">upbeat</h5>
+                        <div class="track-list" id="track-list-happy">
+                            <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
+                        </div>
                         <button>
                             <p>Save as Playlist</p>
                             <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
@@ -70,6 +82,9 @@
                 <div class="card second">
                     <div class="card-cover">
                         <h5 class="card-head">upbeat</h5>
+                        <div class="track-list" id="track-list-happy">
+                            <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
+                        </div>
                         <button>
                             <p>Save as Playlist</p>
                             <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
@@ -81,6 +96,9 @@
                 <div class="card">
                     <div class="card-cover">
                         <h5 class="card-head">upbeat</h5>
+                        <div class="track-list" id="track-list-happy">
+                            <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
+                        </div>
                         <button>
                             <p>Save as Playlist</p>
                             <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
@@ -91,6 +109,9 @@
                 <div class="card second">
                     <div class="card-cover">
                         <h5 class="card-head">upbeat</h5>
+                        <div class="track-list" id="track-list-happy">
+                            <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
+                        </div>
                         <button>
                             <p>Save as Playlist</p>
                             <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>

@@ -166,12 +166,12 @@ i.fas.fa-headphones {
 
 .card-cover {
     background: rgb(29, 29, 29);
-    padding: 20px 60px 35px 20px;
+    padding: 30px;
     border-radius: 25px;
 }
 
 .card-head {
-    margin-top: 0;
+    margin: 0 auto;
     font-size: 40px;
     font-family: 'CBold';
     font-weight: 600;
@@ -181,5 +181,22 @@ i.fas.fa-headphones {
     margin-left: 60px;
 }
 
+.tab {
+    display: flex;
+    margin: 30px auto auto auto;
+    width: 62%;
 
+}
+
+.tab-btn {
+    margin:auto 25px;
+}
+
+.empty-state {
+    text-align: center;
+    font-size: 30px;
+    padding: 30px;
+    letter-spacing: 0;
+    font-family: 'CMedium';
+}
 

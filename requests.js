@@ -254,12 +254,6 @@ function getAlbumArt1(str) {
     headers: {
       Authorization: "Bearer " + access_token,
     },
-    // ajaxI: i,
-    // success: function(response) {
-    //     // console.log(response);
-    //     // i = this.ajaxI;
-
-    // }
   });
 }
 
@@ -269,12 +263,6 @@ function getAlbumArt2(str) {
     headers: {
       Authorization: "Bearer " + access_token,
     },
-    // ajaxI: i,
-    // success: function(response) {
-    //     // console.log(response);
-    //     // i = this.ajaxI;
-
-    // }
   });
 }
 
@@ -284,12 +272,6 @@ function getAlbumArt3(str) {
     headers: {
       Authorization: "Bearer " + access_token,
     },
-    // ajaxI: i,
-    // success: function(response) {
-    //     // console.log(response);
-    //     // i = this.ajaxI;
-
-    // }
   });
 }
 
@@ -311,10 +293,6 @@ function storeImages(response1, response2, response3) {
 }
 
 function requestTrackInfo() {
-  // for(index=0;index<length;index++){
-
-  // var uri = trackIDs[index];
-  // deferredArr.push(
   $.ajax({
     url:
       "https://api.spotify.com/v1/audio-features?ids=" +
@@ -322,17 +300,10 @@ function requestTrackInfo() {
     headers: {
       Authorization: "Bearer " + access_token,
     },
-    // ajaxI: index,
     success: function (response) {
       setTrackInfo(response);
     },
   });
-  // )
-  // }
-
-  // $.when.apply($,deferredArr).done(function() {
-
-  // });
 }
 
 function setTrackInfo(track) {
@@ -343,16 +314,12 @@ function setTrackInfo(track) {
     trackTempo[i] = track.audio_features[i].tempo;
   }
   getAlbumArt();
-  // console.log(x);
-  // console.log(trackMood[x]);
 }
 
 function calculateCategory() {
   var c;
 
   for (c = 0; c < length; c++) {
-    // console.log("entered loop");
-
     if (trackMood[c] < 0.3 && trackEnergy[c] < 0.6) {
       addToSad(c);
       saduri += String(trackURIs[c]);
@@ -382,7 +349,6 @@ function calculateCategory() {
 }
 
 function getCustomTracks() {
-  // console.log("fetching custom tracks");
   hideCustomButton();
   var moodVal = document.getElementById("mood-slider").value;
   moodVal = moodVal / 100;
@@ -390,7 +356,6 @@ function getCustomTracks() {
   danceVal = danceVal / 100;
   var energyVal = document.getElementById("energy-slider").value;
   energyVal = energyVal / 100;
-  // console.log(moodVal, danceVal, energyVal);
 
   customCount = 0;
   emptyCustomList();
@@ -466,7 +431,6 @@ function addToCustom(i) {
 
   referenceNode.appendChild(trackNode);
 
-  // hideCustomEmptyState();
   showCustomButton();
 }
 
