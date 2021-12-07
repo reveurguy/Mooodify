@@ -49,30 +49,10 @@ var relaxycounter = 0;
 var partycounter = 0;
 
 var tabSelectedName = "";
-var today;
-var date = "";
-
-var monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 //----------------------------------------------------------------------
 
 $(document).ready(function () {
   access_token = localStorage.getItem("access_token");
-  today = new Date();
-  getTodayDate();
   oneMonthRequest();
 });
 
@@ -336,7 +316,7 @@ function calculateCategory() {
       energeticuri += ",";
     }
     if (trackMood[c] > 0.3 && trackDance[c] > 0.75) {
-      // addToParty(c);
+      addToParty(c);
       partyuri += String(trackURIs[c]);
       partyuri += ",";
     }
@@ -506,41 +486,41 @@ function addToCheery(i) {
   hideCheeryEmptyState();
 }
 
-// function addToParty(i) {
-//   var referenceNode = document.querySelector("#track-list-party");
+function addToParty(i) {
+  var referenceNode = document.querySelector("#track-list-party");
 
-//   var imgNode = document.createElement("div");
-//   imgNode.className = "album-art";
+  var imgNode = document.createElement("div");
+  imgNode.className = "album-art";
 
-//   var album_img = document.createElement("img");
-//   album_img.src = albumArts[i];
+  var album_img = document.createElement("img");
+  album_img.src = albumArts[i];
 
-//   imgNode.appendChild(album_img);
+  imgNode.appendChild(album_img);
 
-//   var trackNode = document.createElement("div");
-//   trackNode.className = "track";
+  var trackNode = document.createElement("div");
+  trackNode.className = "track";
 
-//   var newNode = document.createElement("div");
-//   newNode.className = "track-description";
+  var newNode = document.createElement("div");
+  newNode.className = "track-description";
 
-//   var trackname = document.createElement("div");
-//   trackname.innerHTML = trackNames[i];
-//   trackname.className = "track-name";
+  var trackname = document.createElement("div");
+  trackname.innerHTML = trackNames[i];
+  trackname.className = "track-name";
 
-//   var artistname = document.createElement("div");
-//   artistname.innerHTML = artistNames[i];
-//   artistname.className = "artist-name";
+  var artistname = document.createElement("div");
+  artistname.innerHTML = artistNames[i];
+  artistname.className = "artist-name";
 
-//   newNode.appendChild(trackname);
-//   newNode.appendChild(artistname);
+  newNode.appendChild(trackname);
+  newNode.appendChild(artistname);
 
-//   trackNode.appendChild(imgNode);
-//   trackNode.appendChild(newNode);
+  trackNode.appendChild(imgNode);
+  trackNode.appendChild(newNode);
 
-//   referenceNode.appendChild(trackNode);
+  referenceNode.appendChild(trackNode);
 
-//   hidePartyEmptyStates();
-// }
+  hidePartyEmptyStates();
+}
 
 function addToRelaxy(i) {
   var referenceNode = document.querySelector("#track-list-relaxy");
@@ -727,24 +707,16 @@ function createPlaylistMellow(user) {
       encodeURIComponent(user.id) +
       "/playlists",
     data: JSON.stringify({
-      name:
-        "top mellow tracks | " +
-        String(tabSelectedName) +
-        " | moooodify | " +
-        String(date),
-      description: "Your favourite mellow tracks generated on moooodify.com",
+      name: "Mooodify- Mellow - " + String(tabSelectedName),
+      description: "Your favourite mellow tracks, from Mooodify.",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json",
     },
     success: function (result) {
-      console.log("Woo! :)");
       addMellowTracks(result);
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -756,10 +728,8 @@ function createPlaylistCheery(user) {
       encodeURIComponent(user.id) +
       "/playlists",
     data: JSON.stringify({
-      name:
-        "Mooodify- " +
-        String(tabSelectedName),
-      description: "Your favourite cheery tracks generated on moooodify.com",
+      name: "Mooodify- Cheery - " + String(tabSelectedName),
+      description: "Your favourite cheery tracks, from Mooodify.",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
@@ -768,10 +738,7 @@ function createPlaylistCheery(user) {
     success: function (result) {
       console.log("Woo! :)");
       addCheeryTracks(result);
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -783,11 +750,9 @@ function createPlaylistEnergetic(user) {
       encodeURIComponent(user.id) +
       "/playlists",
     data: JSON.stringify({
-      name:
-        "Mooodify- " +
-        String(tabSelectedName),
+      name: "Mooodify- Energetic - " + String(tabSelectedName),
       description:
-        "Your favourite high octane tracks generated on moooodify.com",
+        "Your favourite high octane tracks, from Mooodify.",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
@@ -796,10 +761,7 @@ function createPlaylistEnergetic(user) {
     success: function (result) {
       console.log("Woo! :)");
       addEnergeticTracks(result);
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -811,9 +773,9 @@ function createPlaylistRelaxy(user) {
       encodeURIComponent(user.id) +
       "/playlists",
     data: JSON.stringify({
-      name: "Mooodify- " + String(tabSelectedName),
+      name: "Mooodify- Relaxy - " + String(tabSelectedName),
       description:
-        "Your favourite tracks to relax out to, generated on moooodify.com",
+        "Your favourite tracks to relax , from Mooodify.",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
@@ -822,10 +784,7 @@ function createPlaylistRelaxy(user) {
     success: function (result) {
       console.log("Woo! :)");
       addRelaxyTracks(result);
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -838,12 +797,10 @@ function createPlaylistParty(user) {
       "/playlists",
     data: JSON.stringify({
       name:
-        "top party tracks | " +
-        String(tabSelectedName) +
-        " | moooodify | " +
-        String(date),
+        "Mooodify- Partayy - " +
+        String(tabSelectedName),
       description:
-        "Dance the night away to these tracks generated on moooodify.com",
+        "Dance the night away to these tracks, from Mooodify.",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
@@ -852,10 +809,7 @@ function createPlaylistParty(user) {
     success: function (result) {
       console.log("Woo! :)");
       addPartyTracks(result);
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -876,10 +830,7 @@ function addMellowTracks(playlist) {
     success: function (result) {
       console.log("Woo! :)");
       showSnackbar();
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -898,10 +849,7 @@ function addCustomTracks(playlist) {
     success: function (result) {
       console.log("Woo! :)");
       showSnackbar();
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -920,10 +868,7 @@ function addCheeryTracks(playlist) {
     success: function (result) {
       console.log("Woo! :)");
       showSnackbar();
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -942,10 +887,7 @@ function addEnergeticTracks(playlist) {
     success: function (result) {
       console.log("Woo! :)");
       showSnackbar();
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -964,10 +906,7 @@ function addRelaxyTracks(playlist) {
     success: function (result) {
       console.log("Woo! :)");
       showSnackbar();
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -986,10 +925,7 @@ function addPartyTracks(playlist) {
     success: function (result) {
       console.log("Woo! :)");
       showSnackbar();
-    },
-    error: function () {
-      console.log("Error! :(");
-    },
+    }
   });
 }
 
@@ -1068,14 +1004,6 @@ function setAllTimeActive() {
   $("#one-month-tab").removeClass("active");
   $("#six-months-tab").removeClass("active");
   $("#all-time-tab").addClass("active");
-}
-
-function getTodayDate() {
-  var dd = String(today.getDate());
-  var mm = String(today.getMonth());
-  var yyyy = today.getFullYear();
-
-  date = dd + "th " + monthNames[mm] + ", " + yyyy;
 }
 
 //------------------------------------------------------------------------------------
