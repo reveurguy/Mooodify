@@ -204,3 +204,37 @@ i.fas.fa-headphones {
     display: none;
 }
 
+.track {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.album-art {
+    margin-right: 15px;
+}
+
+.album-art img {
+    width: 100px;
+    border-radius: 25px;
+}
+
+.track-description {
+    letter-spacing: 0;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-direction: column;
+}
+
+.track-name {
+    font-size: 25px;
+    font-family: 'CBold';
+    font-weight: 300;
+}
+
+.artist-name {
+    font-size: 20px;
+    font-family: 'CLight';
+    font-weight: 100;
+    line-height: 1;
+}
