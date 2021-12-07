@@ -17,10 +17,10 @@ var artistImg = [];
 
 var counter = 0;
 
-var chill = [];
+var relaxy = [];
 var party = [];
-var happy = [];
-var sad = [];
+var cheery = [];
+var mellow = [];
 var angry = [];
 
 var length;
@@ -35,17 +35,17 @@ var deferredArr = [];
 
 var customCount = 0;
 
-var saduri = "";
-var happyuri = "";
-var aggressiveuri = "";
-var chilluri = "";
+var mellowuri = "";
+var cheeryuri = "";
+var energeticuri = "";
+var relaxyuri = "";
 var partyuri = "";
 var customuri = "";
 
-var sadcounter = 0;
-var happycounter = 0;
-var aggressivecounter = 0;
-var chillcounter = 0;
+var mellowcounter = 0;
+var cheerycounter = 0;
+var energeticcounter = 0;
+var relaxycounter = 0;
 var partycounter = 0;
 
 var tabSelectedName = "";
@@ -125,10 +125,10 @@ function oneMonthRequest() {
 }
 
 function resetEverything() {
-  saduri = "";
-  happyuri = "";
-  aggressiveuri = "";
-  chilluri = "";
+  mellowuri = "";
+  cheeryuri = "";
+  energeticuri = "";
+  relaxyuri = "";
   partyuri = "";
   customuri = "";
 
@@ -137,10 +137,10 @@ function resetEverything() {
   albumObjString = "";
   trackIDString = "";
 
-  sadcounter = 0;
-  happycounter = 0;
-  aggressivecounter = 0;
-  chillcounter = 0;
+  mellowcounter = 0;
+  cheerycounter = 0;
+  energeticcounter = 0;
+  relaxycounter = 0;
   partycounter = 0;
 
   trackIDs = [];
@@ -159,10 +159,10 @@ function resetEverything() {
 
   counter = 0;
 
-  chill = [];
+  relaxy = [];
   party = [];
-  happy = [];
-  sad = [];
+  cheery = [];
+  mellow = [];
   angry = [];
 
   length = 0;
@@ -179,25 +179,25 @@ function resetEverything() {
 }
 
 function resetDOMs() {
-  $("#sad-empty-state").removeClass("hide");
-  $("#happy-empty-state").removeClass("hide");
-  $("#aggressive-empty-state").removeClass("hide");
-  $("#chill-empty-state").removeClass("hide");
+  $("#mellow-empty-state").removeClass("hide");
+  $("#cheery-empty-state").removeClass("hide");
+  $("#energetic-empty-state").removeClass("hide");
+  $("#relaxy-empty-state").removeClass("hide");
   $("#party-empty-state").removeClass("hide");
   $("#custom-button").removeClass("show");
 
   $("#track-list-custom").children(":not(#custom-empty-state)").remove();
   $("#custom-empty-state").addClass("empty-state");
-  $("#track-list-sad").children(":not(#sad-empty-state)").remove();
-  $("#sad-empty-state").addClass("empty-state");
-  $("#track-list-happy").children(":not(#happy-empty-state)").remove();
-  $("#happy-empty-state").addClass("empty-state");
-  $("#track-list-aggressive")
-    .children(":not(#aggressive-empty-state)")
+  $("#track-list-mellow").children(":not(#mellow-empty-state)").remove();
+  $("#mellow-empty-state").addClass("empty-state");
+  $("#track-list-cheery").children(":not(#cheery-empty-state)").remove();
+  $("#cheery-empty-state").addClass("empty-state");
+  $("#track-list-energetic")
+    .children(":not(#energetic-empty-state)")
     .remove();
-  $("#aggressive-empty-state").addClass("empty-state");
-  $("#track-list-chill").children(":not(#chill-empty-state)").remove();
-  $("#chill-empty-state").addClass("empty-state");
+  $("#energetic-empty-state").addClass("empty-state");
+  $("#track-list-relaxy").children(":not(#relaxy-empty-state)").remove();
+  $("#relaxy-empty-state").addClass("empty-state");
   $("#track-list-party").children(":not(#party-empty-state)").remove();
   $("#party-empty-state").addClass("empty-state");
 }
@@ -321,19 +321,19 @@ function calculateCategory() {
 
   for (c = 0; c < length; c++) {
     if (trackMood[c] < 0.3 && trackEnergy[c] < 0.6) {
-      // addToSad(c);
-      saduri += String(trackURIs[c]);
-      saduri += ",";
+      addToMellow(c);
+      mellowuri += String(trackURIs[c]);
+      mellowuri += ",";
     }
     if (trackMood[c] > 0.6 && trackEnergy[c] > 0.3) {
-      addToHappy(c);
-      happyuri += String(trackURIs[c]);
-      happyuri += ",";
+      addToCheery(c);
+      cheeryuri += String(trackURIs[c]);
+      cheeryuri += ",";
     }
     if (trackEnergy[c] > 0.8) {
-      // addToAggressive(c);
-      aggressiveuri += String(trackURIs[c]);
-      aggressiveuri += ",";
+      addToEnergetic(c);
+      energeticuri += String(trackURIs[c]);
+      energeticuri += ",";
     }
     if (trackMood[c] > 0.3 && trackDance[c] > 0.75) {
       // addToParty(c);
@@ -341,9 +341,9 @@ function calculateCategory() {
       partyuri += ",";
     }
     if (trackEnergy[c] < 0.4 && trackMood[c] > 0.3) {
-      // addToChill(c);
-      chilluri += String(trackURIs[c]);
-      chilluri += ",";
+      addToRelaxy(c);
+      relaxyuri += String(trackURIs[c]);
+      relaxyuri += ",";
     }
   }
 }
@@ -434,44 +434,44 @@ function emptyCustomList() {
 //   showCustomButton();
 // }
 
-// function addToSad(c) {
-//   var referenceNode = document.querySelector("#track-list-sad");
+function addToMellow(c) {
+  var referenceNode = document.querySelector("#track-list-mellow");
 
-//   var imgNode = document.createElement("div");
-//   imgNode.className = "album-art";
+  var imgNode = document.createElement("div");
+  imgNode.className = "album-art";
 
-//   var album_img = document.createElement("img");
-//   album_img.src = albumArts[c];
+  var album_img = document.createElement("img");
+  album_img.src = albumArts[c];
 
-//   imgNode.appendChild(album_img);
+  imgNode.appendChild(album_img);
 
-//   var trackNode = document.createElement("div");
-//   trackNode.className = "track";
+  var trackNode = document.createElement("div");
+  trackNode.className = "track";
 
-//   var newNode = document.createElement("div");
-//   newNode.className = "track-description";
+  var newNode = document.createElement("div");
+  newNode.className = "track-description";
 
-//   var trackname = document.createElement("div");
-//   trackname.innerHTML = trackNames[c];
-//   trackname.className = "track-name";
+  var trackname = document.createElement("div");
+  trackname.innerHTML = trackNames[c];
+  trackname.className = "track-name";
 
-//   var artistname = document.createElement("div");
-//   artistname.innerHTML = artistNames[c];
-//   artistname.className = "artist-name";
+  var artistname = document.createElement("div");
+  artistname.innerHTML = artistNames[c];
+  artistname.className = "artist-name";
 
-//   newNode.appendChild(trackname);
-//   newNode.appendChild(artistname);
+  newNode.appendChild(trackname);
+  newNode.appendChild(artistname);
 
-//   trackNode.appendChild(imgNode);
-//   trackNode.appendChild(newNode);
+  trackNode.appendChild(imgNode);
+  trackNode.appendChild(newNode);
 
-//   referenceNode.appendChild(trackNode);
+  referenceNode.appendChild(trackNode);
 
-//   hideSadEmptyState();
-// }
+  hideMellowEmptyState();
+}
 
-function addToHappy(i) {
-  var referenceNode = document.querySelector("#track-list-happy");
+function addToCheery(i) {
+  var referenceNode = document.querySelector("#track-list-cheery");
 
   var imgNode = document.createElement("div");
   imgNode.className = "album-art";
@@ -503,7 +503,7 @@ function addToHappy(i) {
 
   referenceNode.appendChild(trackNode);
 
-  hideHappyEmptyState();
+  hideCheeryEmptyState();
 }
 
 // function addToParty(i) {
@@ -542,77 +542,77 @@ function addToHappy(i) {
 //   hidePartyEmptyStates();
 // }
 
-// function addToChill(i) {
-//   var referenceNode = document.querySelector("#track-list-chill");
+function addToRelaxy(i) {
+  var referenceNode = document.querySelector("#track-list-relaxy");
 
-//   var imgNode = document.createElement("div");
-//   imgNode.className = "album-art";
+  var imgNode = document.createElement("div");
+  imgNode.className = "album-art";
 
-//   var album_img = document.createElement("img");
-//   album_img.src = albumArts[i];
+  var album_img = document.createElement("img");
+  album_img.src = albumArts[i];
 
-//   imgNode.appendChild(album_img);
+  imgNode.appendChild(album_img);
 
-//   var trackNode = document.createElement("div");
-//   trackNode.className = "track";
+  var trackNode = document.createElement("div");
+  trackNode.className = "track";
 
-//   var newNode = document.createElement("div");
-//   newNode.className = "track-description";
+  var newNode = document.createElement("div");
+  newNode.className = "track-description";
 
-//   var trackname = document.createElement("div");
-//   trackname.innerHTML = trackNames[i];
-//   trackname.className = "track-name";
+  var trackname = document.createElement("div");
+  trackname.innerHTML = trackNames[i];
+  trackname.className = "track-name";
 
-//   var artistname = document.createElement("div");
-//   artistname.innerHTML = artistNames[i];
-//   artistname.className = "artist-name";
+  var artistname = document.createElement("div");
+  artistname.innerHTML = artistNames[i];
+  artistname.className = "artist-name";
 
-//   newNode.appendChild(trackname);
-//   newNode.appendChild(artistname);
+  newNode.appendChild(trackname);
+  newNode.appendChild(artistname);
 
-//   trackNode.appendChild(imgNode);
-//   trackNode.appendChild(newNode);
+  trackNode.appendChild(imgNode);
+  trackNode.appendChild(newNode);
 
-//   referenceNode.appendChild(trackNode);
+  referenceNode.appendChild(trackNode);
 
-//   hideChillEmptyStates();
-// }
+  hideRelaxyEmptyStates();
+}
 
-// function addToAggressive(i) {
-//   var referenceNode = document.querySelector("#track-list-aggressive");
+function addToEnergetic(i) {
+  var referenceNode = document.querySelector("#track-list-energetic");
 
-//   var imgNode = document.createElement("div");
-//   imgNode.className = "album-art";
+  var imgNode = document.createElement("div");
+  imgNode.className = "album-art";
 
-//   var album_img = document.createElement("img");
-//   album_img.src = albumArts[i];
+  var album_img = document.createElement("img");
+  album_img.src = albumArts[i];
 
-//   imgNode.appendChild(album_img);
+  imgNode.appendChild(album_img);
 
-//   var trackNode = document.createElement("div");
-//   trackNode.className = "track";
+  var trackNode = document.createElement("div");
+  trackNode.className = "track";
 
-//   var newNode = document.createElement("div");
-//   newNode.className = "track-description";
+  var newNode = document.createElement("div");
+  newNode.className = "track-description";
 
-//   var trackname = document.createElement("div");
-//   trackname.innerHTML = trackNames[i];
-//   trackname.className = "track-name";
+  var trackname = document.createElement("div");
+  trackname.innerHTML = trackNames[i];
+  trackname.className = "track-name";
 
-//   var artistname = document.createElement("div");
-//   artistname.innerHTML = artistNames[i];
-//   artistname.className = "artist-name";
+  var artistname = document.createElement("div");
+  artistname.innerHTML = artistNames[i];
+  artistname.className = "artist-name";
 
-//   newNode.appendChild(trackname);
-//   newNode.appendChild(artistname);
+  newNode.appendChild(trackname);
+  newNode.appendChild(artistname);
 
-//   trackNode.appendChild(imgNode);
-//   trackNode.appendChild(newNode);
+  trackNode.appendChild(imgNode);
+  trackNode.appendChild(newNode);
 
-//   referenceNode.appendChild(trackNode);
+  referenceNode.appendChild(trackNode);
 
-//   hideAggressiveEmptyState();
-// }
+  hideEnergeticEmptyState();
+}
 
 // ---------------------------------------------------------------------
 
@@ -628,50 +628,50 @@ function getuserIDCustom() {
   });
 }
 
-function getuserIDSad() {
+function getuserIDMellow() {
   $.ajax({
     url: "https://api.spotify.com/v1/me/",
     headers: {
       Authorization: "Bearer " + access_token,
     },
     success: function (response) {
-      createPlaylistSad(response);
+      createPlaylistMellow(response);
     },
   });
 }
 
-function getuserIDHappy() {
+function getuserIDCheery() {
   $.ajax({
     url: "https://api.spotify.com/v1/me/",
     headers: {
       Authorization: "Bearer " + access_token,
     },
     success: function (response) {
-      createPlaylistHappy(response);
+      createPlaylistCheery(response);
     },
   });
 }
 
-function getuserIDAggressive() {
+function getuserIDEnergetic() {
   $.ajax({
     url: "https://api.spotify.com/v1/me/",
     headers: {
       Authorization: "Bearer " + access_token,
     },
     success: function (response) {
-      createPlaylistAggressive(response);
+      createPlaylistEnergetic(response);
     },
   });
 }
 
-function getuserIDChill() {
+function getuserIDRelaxy() {
   $.ajax({
     url: "https://api.spotify.com/v1/me/",
     headers: {
       Authorization: "Bearer " + access_token,
     },
     success: function (response) {
-      createPlaylistChill(response);
+      createPlaylistRelaxy(response);
     },
   });
 }
@@ -719,7 +719,7 @@ function createPlaylistCustom(user) {
   });
 }
 
-function createPlaylistSad(user) {
+function createPlaylistMellow(user) {
   $.ajax({
     type: "POST",
     url:
@@ -740,7 +740,7 @@ function createPlaylistSad(user) {
     },
     success: function (result) {
       console.log("Woo! :)");
-      addSadTracks(result);
+      addMellowTracks(result);
     },
     error: function () {
       console.log("Error! :(");
@@ -748,7 +748,7 @@ function createPlaylistSad(user) {
   });
 }
 
-function createPlaylistHappy(user) {
+function createPlaylistCheery(user) {
   $.ajax({
     type: "POST",
     url:
@@ -757,11 +757,9 @@ function createPlaylistHappy(user) {
       "/playlists",
     data: JSON.stringify({
       name:
-        "top upbeat tracks | " +
-        String(tabSelectedName) +
-        " | moooodify | " +
-        String(date),
-      description: "Your favourite upbeat tracks generated on moooodify.com",
+        "Mooodify- " +
+        String(tabSelectedName),
+      description: "Your favourite cheery tracks generated on moooodify.com",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
@@ -769,7 +767,7 @@ function createPlaylistHappy(user) {
     },
     success: function (result) {
       console.log("Woo! :)");
-      addHappyTracks(result);
+      addCheeryTracks(result);
     },
     error: function () {
       console.log("Error! :(");
@@ -777,7 +775,7 @@ function createPlaylistHappy(user) {
   });
 }
 
-function createPlaylistAggressive(user) {
+function createPlaylistEnergetic(user) {
   $.ajax({
     type: "POST",
     url:
@@ -786,10 +784,8 @@ function createPlaylistAggressive(user) {
       "/playlists",
     data: JSON.stringify({
       name:
-        "top high energy tracks | " +
-        String(tabSelectedName) +
-        " | moooodify | " +
-        String(date),
+        "Mooodify- " +
+        String(tabSelectedName),
       description:
         "Your favourite high octane tracks generated on moooodify.com",
     }),
@@ -799,7 +795,7 @@ function createPlaylistAggressive(user) {
     },
     success: function (result) {
       console.log("Woo! :)");
-      addAggressiveTracks(result);
+      addEnergeticTracks(result);
     },
     error: function () {
       console.log("Error! :(");
@@ -807,7 +803,7 @@ function createPlaylistAggressive(user) {
   });
 }
 
-function createPlaylistChill(user) {
+function createPlaylistRelaxy(user) {
   $.ajax({
     type: "POST",
     url:
@@ -815,13 +811,9 @@ function createPlaylistChill(user) {
       encodeURIComponent(user.id) +
       "/playlists",
     data: JSON.stringify({
-      name:
-        "top chill tracks | " +
-        String(tabSelectedName) +
-        " | moooodify | " +
-        String(date),
+      name: "Mooodify- " + String(tabSelectedName),
       description:
-        "Your favourite tracks to chill out to, generated on moooodify.com",
+        "Your favourite tracks to relax out to, generated on moooodify.com",
     }),
     headers: {
       Authorization: "Bearer " + access_token,
@@ -829,7 +821,7 @@ function createPlaylistChill(user) {
     },
     success: function (result) {
       console.log("Woo! :)");
-      addChillTracks(result);
+      addRelaxyTracks(result);
     },
     error: function () {
       console.log("Error! :(");
@@ -869,14 +861,14 @@ function createPlaylistParty(user) {
 
 //-----------------------------------------------------------------------
 
-function addSadTracks(playlist) {
+function addMellowTracks(playlist) {
   $.ajax({
     type: "POST",
     url:
       "https://api.spotify.com/v1/playlists/" +
       encodeURIComponent(playlist.id) +
       "/tracks?uris=" +
-      saduri,
+      mellowuri,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json",
@@ -913,14 +905,14 @@ function addCustomTracks(playlist) {
   });
 }
 
-function addHappyTracks(playlist) {
+function addCheeryTracks(playlist) {
   $.ajax({
     type: "POST",
     url:
       "https://api.spotify.com/v1/playlists/" +
       encodeURIComponent(playlist.id) +
       "/tracks?uris=" +
-      happyuri,
+      cheeryuri,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json",
@@ -935,14 +927,14 @@ function addHappyTracks(playlist) {
   });
 }
 
-function addAggressiveTracks(playlist) {
+function addEnergeticTracks(playlist) {
   $.ajax({
     type: "POST",
     url:
       "https://api.spotify.com/v1/playlists/" +
       encodeURIComponent(playlist.id) +
       "/tracks?uris=" +
-      aggressiveuri,
+      energeticuri,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json",
@@ -957,14 +949,14 @@ function addAggressiveTracks(playlist) {
   });
 }
 
-function addChillTracks(playlist) {
+function addRelaxyTracks(playlist) {
   $.ajax({
     type: "POST",
     url:
       "https://api.spotify.com/v1/playlists/" +
       encodeURIComponent(playlist.id) +
       "/tracks?uris=" +
-      chilluri,
+      relaxyuri,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json",
@@ -1029,23 +1021,23 @@ function hideCustomButton() {
   $("#custom-button").removeClass("show");
 }
 
-function hideSadEmptyState() {
-  var x = document.getElementById("sad-empty-state");
+function hideMellowEmptyState() {
+  var x = document.getElementById("mellow-empty-state");
   x.className = "hide";
 }
 
-function hideHappyEmptyState() {
-  var x = document.getElementById("happy-empty-state");
+function hideCheeryEmptyState() {
+  var x = document.getElementById("cheery-empty-state");
   x.className = "hide";
 }
 
-function hideAggressiveEmptyState() {
-  var x = document.getElementById("aggressive-empty-state");
+function hideEnergeticEmptyState() {
+  var x = document.getElementById("energetic-empty-state");
   x.className = "hide";
 }
 
-function hideChillEmptyStates() {
-  var x = document.getElementById("chill-empty-state");
+function hideRelaxyEmptyStates() {
+  var x = document.getElementById("relaxy-empty-state");
   x.className = "hide";
 }
 
@@ -1087,3 +1079,8 @@ function getTodayDate() {
 }
 
 //------------------------------------------------------------------------------------
+ScrollReveal().reveal(".track", {
+  interval: 300,
+  mobile: true,
+  viewFactor: 0.3,
+});
