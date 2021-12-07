@@ -160,6 +160,7 @@ i.fas.fa-headphones {
     display: flex;
     flex-direction: row;
     margin: 15px 30px;
+    align-items: flex-start;
 }
 
 .card {
@@ -207,12 +208,12 @@ i.fas.fa-headphones {
 .tab {
     display: flex;
     margin: 30px auto auto auto;
-    width: 62%;
-
+    justify-content: center;
 }
 
 .tab-btn {
     margin:auto 25px;
+    font-size: 30px;
 }
 
 .empty-state {

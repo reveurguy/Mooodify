@@ -1079,8 +1079,3 @@ function getTodayDate() {
 }
 
 //------------------------------------------------------------------------------------
-ScrollReveal().reveal(".track", {
-  interval: 300,
-  mobile: true,
-  viewFactor: 0.3,
-});
