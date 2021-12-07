@@ -43,7 +43,10 @@
             <div class="flex-row">
                 <div class="card" id= "happy">
                     <div class="card-cover">
-                        <h5 class="card-head">upbeat</h5>
+                        <h5 class="card-head">upbeat
+                            <hr class="sub-heading--2">
+                        </h5>
+                        
                         <div class="track-list" id="track-list-happy">
                             <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
                         </div>
@@ -55,7 +58,9 @@
                 </div>
                 <div class="card second">
                     <div class="card-cover">
-                        <h5 class="card-head">upbeat</h5>
+                        <h5 class="card-head">upbeat
+                            <hr class="sub-heading--2">
+                        </h5>
                         <div class="track-list" id="track-list-happy">
                             <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
                         </div>
@@ -69,7 +74,9 @@
             <div class="flex-row">
                 <div class="card">
                     <div class="card-cover">
-                        <h5 class="card-head">upbeat</h5>
+                        <h5 class="card-head">upbeat
+                            <hr class="sub-heading--2">
+                        </h5>
                         <div class="track-list" id="track-list-happy">
                             <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
                         </div>
@@ -81,7 +88,9 @@
                 </div>
                 <div class="card second">
                     <div class="card-cover">
-                        <h5 class="card-head">upbeat</h5>
+                        <h5 class="card-head">upbeat
+                            <hr class="sub-heading--2">
+                        </h5>
                         <div class="track-list" id="track-list-happy">
                             <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
                         </div>
@@ -95,7 +104,9 @@
             <div class="flex-row">
                 <div class="card">
                     <div class="card-cover">
-                        <h5 class="card-head">upbeat</h5>
+                        <h5 class="card-head">upbeat
+                            <hr class="sub-heading--2">
+                        </h5>
                         <div class="track-list" id="track-list-happy">
                             <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
                         </div>
@@ -108,7 +119,9 @@
                 </div>
                 <div class="card second">
                     <div class="card-cover">
-                        <h5 class="card-head">upbeat</h5>
+                        <h5 class="card-head">upbeat
+                            <hr class="sub-heading--2">
+                        </h5>
                         <div class="track-list" id="track-list-happy">
                             <div id="happy-empty-state" class="empty-state">Nothing to show here</div>
                         </div>
@@ -126,7 +139,16 @@
         <p>Back</p>
         <span class="Coralwave1"></span><span class="Coralwave2"></span><span class="Coralwave3"></span>
     </button>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // ScrollReveal().reveal('.jumbotron-text', { duration: 2000 });
+        ScrollReveal().reveal('.card', {
+            interval: 300, mobile: true, viewFactor: 0.3
+        });
+        ScrollReveal().reveal('.track', {
+            interval: 300, mobile: true, viewFactor: 0.3
+        });
+    </script>
     
 
 </body>

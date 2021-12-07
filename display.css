@@ -130,11 +130,20 @@ i.fas.fa-headphones {
 }
 
 .sub-heading--1 {
-    margin: 0px auto;
+    margin: 0 auto;
     width: 30vw;
     height: 5px;
     border: none;
     float: left;
+    border-radius: 500%;
+    background: -webkit-linear-gradient(290deg,#f7797d, #FBD786, #C6FFDD);
+}
+
+.sub-heading--2 {
+    margin: 5px auto 10px auto;
+    width: 15vw;
+    height: 5px;
+    border: none;
     border-radius: 500%;
     background: -webkit-linear-gradient(290deg,#f7797d, #FBD786, #C6FFDD);
 }
@@ -175,6 +184,9 @@ i.fas.fa-headphones {
     font-size: 40px;
     font-family: 'CBold';
     font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .second {
